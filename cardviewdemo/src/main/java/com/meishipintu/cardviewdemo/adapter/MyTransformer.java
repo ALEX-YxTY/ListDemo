@@ -15,7 +15,6 @@ public class MyTransformer implements ViewPager.PageTransformer {
     @Override
     public void transformPage(View view, float position) {
         int pageWidth = view.getWidth();
-        int pageHeight = view.getHeight();
 
         if (position <= 1.2 && position >= -1.2) {         // (-1,1) 可见状态，设置动画效果
             float scaleFactor = Math.max(MIN_SCALE, 1.2f - Math.abs(position)/2.0f);
@@ -28,10 +27,8 @@ public class MyTransformer implements ViewPager.PageTransformer {
                 view.setTranslationX(-horzMargin );
                 view.setRotationY(-rotateFactor);
             }
-
             view.setScaleX(scaleFactor);
             view.setScaleY(scaleFactor);
-
         }
     }
 }

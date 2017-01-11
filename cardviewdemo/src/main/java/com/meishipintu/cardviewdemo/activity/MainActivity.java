@@ -110,14 +110,14 @@ public class MainActivity extends AppCompatActivity {
         rv.setItemAnimator(new DefaultItemAnimator());
         RecyclerView.Adapter<MyViewHolder> adapter = new MyAdapter(this, dataList);
         rv.setAdapter(adapter);
-        final ViewTreeObserver viewTreeObserver = rv.getViewTreeObserver();
-        viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
-            @Override
-            public void onGlobalLayout() {
-                rv.getViewTreeObserver().removeOnGlobalLayoutListener(this);
-                rv.scrollToPosition(1000 - 1000 % dataList.size());
-            }
-        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        rv.scrollToPosition(1000 - 1000 % dataList.size());
+        //初始滚动一个微小量，使得滚动调整机制被调用
+        rv.smoothScrollBy(-50, 0);
     }
 
     //带动画滑动

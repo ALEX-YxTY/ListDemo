@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.meishipintu.cardviewdemo.bean.Data;
 import com.meishipintu.cardviewdemo.R;
+import com.meishipintu.cardviewdemo.bean.Data;
 
 import java.util.List;
 
@@ -15,19 +15,19 @@ import java.util.List;
  * Created by Administrator on 2017/1/3.
  */
 
-public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
+public class MyAdapterNew extends RecyclerView.Adapter<MyViewHolder> {
 
     private Context context;
     private List<Data> dataList;
     private int mCount;
 
-    public MyAdapter(Context context, List<Data> dataList) {
+    public MyAdapterNew(Context context, List<Data> dataList) {
         this.context = context;
         this.dataList = dataList;
-        this.mCount = 2000;
+        this.mCount = dataList.size();
     }
 
-    public MyAdapter(Context context, List<Data> dataList,int count) {
+    public MyAdapterNew(Context context, List<Data> dataList, int count) {
         this.context = context;
         this.dataList = dataList;
         this.mCount = count;
@@ -35,7 +35,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = View.inflate(context, R.layout.item_getmi_task_new, null);
+        View view = View.inflate(context, R.layout.item_getmi_task, null);
         return new MyViewHolder(view);
     }
 
