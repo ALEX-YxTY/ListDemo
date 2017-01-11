@@ -26,6 +26,7 @@ public class Main2Activity extends AppCompatActivity {
         dataList = (List<Data>) getIntent().getExtras().get("data");
         adapter = new MyPagerAdapter(this, dataList);
         vp.setAdapter(adapter);
+        //设置与滚动关联的动效需要实现Transformer类
         vp.setPageTransformer(false,new MyTransformer());
         vp.setOffscreenPageLimit(3);
         vp.setPageMargin(50);

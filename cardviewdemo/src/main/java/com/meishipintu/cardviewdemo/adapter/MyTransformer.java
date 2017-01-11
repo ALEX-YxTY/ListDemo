@@ -18,10 +18,8 @@ public class MyTransformer implements ViewPager.PageTransformer {
         int pageHeight = view.getHeight();
 
         if (position <= 1.2 && position >= -1.2) {         // (-1,1) 可见状态，设置动画效果
-//            float scaleFactor = Math.max(MIN_SCALE, 1 - Math.abs(position));
             float scaleFactor = Math.max(MIN_SCALE, 1.2f - Math.abs(position)/2.0f);
             float rotateFactor = Math.min(MAX_ROTATE, 7.5f * Math.abs(position));
-            float vertMargin = pageHeight * (1.2f - scaleFactor) / 2;
             float horzMargin = pageWidth * (1.2f - scaleFactor) / 2;
             if (position > 0) {
                 view.setRotationY(rotateFactor);
@@ -33,10 +31,6 @@ public class MyTransformer implements ViewPager.PageTransformer {
 
             view.setScaleX(scaleFactor);
             view.setScaleY(scaleFactor);
-//
-//            view.setAlpha(MIN_ALPHA +
-//                    (scaleFactor - MIN_SCALE) /
-//                            (1 - MIN_SCALE) * (1 - MIN_ALPHA));
 
         }
     }
