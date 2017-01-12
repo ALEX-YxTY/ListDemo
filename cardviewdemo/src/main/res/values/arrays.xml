@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="colorBackground">
+        <item>0xF2A564</item>
+        <item>0x76B1F1</item>
+        <item>0xF4869E</item>
+        <item>0x67C0D3</item>
+    </integer-array>
+    <integer-array name="colorForeground">
+        <item>0xF09A49</item>
+        <item>0x72B4FC</item>
+        <item>0xEB7289</item>
+        <item>0x4CB5CA</item>
+    </integer-array>
+    <integer-array name="colorBottom">
+        <item>0xF07549</item>
+        <item>0x7274FC</item>
+        <item>0xFF5C5C</item>
+        <item>0x00A9B2</item>
+    </integer-array>
+</resources>
