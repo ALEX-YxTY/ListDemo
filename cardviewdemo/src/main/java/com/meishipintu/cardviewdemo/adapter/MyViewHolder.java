@@ -16,12 +16,12 @@ import com.meishipintu.cardviewdemo.R;
 public class MyViewHolder extends RecyclerView.ViewHolder {
     public ImageView iv;
     public TextView tv;
-    public Button bt;
+    public TextView bt;
 
     public MyViewHolder(View itemView) {
         super(itemView);
         iv = (ImageView) itemView.findViewById(R.id.iv);
         tv = (TextView) itemView.findViewById(R.id.title);
-        bt = (Button) itemView.findViewById(R.id.bt);
+        bt = (TextView) itemView.findViewById(R.id.bt);
     }
 }

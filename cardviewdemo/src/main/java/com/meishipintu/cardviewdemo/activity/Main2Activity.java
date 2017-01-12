@@ -1,5 +1,6 @@
 package com.meishipintu.cardviewdemo.activity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -44,12 +45,6 @@ public class Main2Activity extends AppCompatActivity {
         vp.setOffscreenPageLimit(3);
         vp.setPageMargin(50);
         vp.setCurrentItem(100 - 100 % dataList.size());
-        vp.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //点击弹窗，播放动画
-            }
-        });
         vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {

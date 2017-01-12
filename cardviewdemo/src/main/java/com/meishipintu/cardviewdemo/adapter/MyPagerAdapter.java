@@ -1,12 +1,15 @@
 package com.meishipintu.cardviewdemo.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.Toast;
 
+import com.meishipintu.cardviewdemo.activity.Detail;
 import com.meishipintu.cardviewdemo.bean.Data;
 import com.meishipintu.cardviewdemo.R;
 
@@ -31,14 +34,14 @@ public class MyPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(final ViewGroup container, int position) {
+    public Object instantiateItem(final ViewGroup container, final int position) {
         final Data data = dataList.get(position % dataList.size());
         View view;
         MyViewHolder holder;
         if (convertViewList.size() != 0) {
             view = convertViewList.remove(0);
         } else {
-            view = View.inflate(context, R.layout.item_getmi_task_new, null);
+            view = View.inflate(context, R.layout.item_getmi_task, null);
             holder = new MyViewHolder(view);
             view.setTag(holder);
         }
@@ -51,6 +54,16 @@ public class MyPagerAdapter extends PagerAdapter {
             }
         });
         holder.iv.setImageResource(data.getPicRes());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Detail.class);
+                intent.putExtra("pic", data.getPicRes());
+                intent.putExtra("position", position);
+                context.startActivity(intent);
+                ((Activity)context).overridePendingTransition(R.anim.anim_in_scale,R.anim.anim_out_alpha);
+            }
+        });
         //如果View已经在之前添加到了一个父组件，则必须先remove，否则会抛出IllegalStateException。  
         ViewParent vp = view.getParent();
         if (vp != null) {

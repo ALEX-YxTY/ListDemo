@@ -15,11 +15,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Main2Activity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".activity.Main2Activity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".activity.Main3Activity" />
         <activity android:name=".activity.Main4Activity" />
-        <activity android:name=".activity.Main5Activity"></activity>
+        <activity android:name=".activity.Main5Activity" />
+        <activity android:name=".activity.Detail"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

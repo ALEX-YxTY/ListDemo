@@ -1,11 +1,16 @@
 package com.meishipintu.cardviewdemo.adapter;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.meishipintu.cardviewdemo.activity.Detail;
+import com.meishipintu.cardviewdemo.activity.Main2Activity;
 import com.meishipintu.cardviewdemo.bean.Data;
 import com.meishipintu.cardviewdemo.R;
 
@@ -35,7 +40,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = View.inflate(context, R.layout.item_getmi_task_new, null);
+        View view = View.inflate(context, R.layout.item_getmi_task, null);
         return new MyViewHolder(view);
     }
 
@@ -51,6 +56,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyViewHolder> {
             }
         });
         holder.iv.setImageResource(data.getPicRes());
+
     }
 
     @Override
